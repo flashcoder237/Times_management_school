@@ -1,0 +1,30 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <mat-card fxFlex="45">
+        <button mat-raised-button color="primary" type="submit">Define a pause</button>
+        <mat-toolbar color="primary" fxLayoutAlign="center center" fxFlexFill>{{ title }}</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+            <mat-form-field>
+                <input matInput placeholder="Name of confiuration" [(ngModel)]="config.name" name="name" required>
+                <mat-error *ngIf="errors.hasOwnProperty('name')">{{ errors.name[0]}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Period duration (H)" [(ngModel)]="config.period_duration"
+                    name="periodDuration" type="number" min="1" max="24" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Pause duration (H)" [(ngModel)]="config.pause_duration"
+                    name="pauseDuration" type="number" min="0" max="24" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Begin at (H)" [(ngModel)]="config.begin_at" name="begin" type="number"
+                    min="0" max="24" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="End at (H)" [(ngModel)]="config.end_at" name="end" type="number" min="0"
+                    max="24" required>
+            </mat-form-field>
+            <button mat-raised-button (click)="emitEditedConfig()" color="primary" type="submit">Next</button>
+        </form>
+
+    </mat-card>
+</div>

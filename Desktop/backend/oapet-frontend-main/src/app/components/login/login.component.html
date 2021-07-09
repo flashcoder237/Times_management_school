@@ -1,0 +1,19 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+  <mat-card fxFlex="40">
+    <mat-toolbar color="primary" fxLayoutAlign="center center" fxFlexFill>OAPET--AUTHENTIFICATION</mat-toolbar>
+    <form fxLayoutAlign="stretch" (ngSubmit)="onSubmit()" fxLayout="column" class="login-form">
+      <mat-form-field>
+        <input matInput placeholder="Email" name="email" [(ngModel)]="credentials.email" type="email" required>
+        <mat-icon matSuffix>alternate_email</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Mot de passe" [ngModelOptions]="{standalone: true}"
+          [(ngModel)]="credentials.password" type="password" required>
+        <mat-icon matSuffix>vpn_key</mat-icon>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Se connecter</button>
+    </form>
+
+  </mat-card>
+</div>
