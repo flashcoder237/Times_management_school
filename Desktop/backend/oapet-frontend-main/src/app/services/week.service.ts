@@ -32,8 +32,8 @@ CONF_URL = environment.api + "/weeks/"
     return this.http.get<Week>(this.CONF_URL + id)
   }
 
-  getDaysById(id: number): Observable<Day>{
-    return this.http.get<Day>(environment.api + "/days/" + id)
+  getDaysById(id: number): Observable<Array<Day>>{
+    return this.http.get<Array<Day>>( environment.api + "/days/weeks/" + id + "/")
   }
 
 }

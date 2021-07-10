@@ -1,4 +1,4 @@
-<div class="jour">
+<div class="day">
   <img src="{{'../../../../../assets/' + getDay(date)+ '.jpg'}}" class="titre">
-  <app-period **ngFor="let period of periods" [periode]=period></app-period>
+  <app-period *ngFor="let period of periods" [periode]=period></app-period>
 </div>

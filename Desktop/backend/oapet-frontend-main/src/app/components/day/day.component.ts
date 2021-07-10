@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { from, Observable, of } from 'rxjs';
-import { Day } from './../../types/day';
 import { Period } from './../../types/period'
 import { DayService } from '../../services/day.service';
 import { PeriodeService } from '../../services/periode.service';
@@ -12,7 +10,8 @@ import * as moment from 'moment';
   styleUrls: ['./day.component.css']
 })
 export class DayComponent implements OnInit{
-  periods: Array <Period> = []
+  periods: Array<Period> = []
+  @Input() idDay : number = 0
   @Input() date?: Date
   @Input() begin_at?: number
   @Input() end_at? : number
@@ -28,7 +27,7 @@ export class DayComponent implements OnInit{
 
 
   ngOnInit(): void {
-     this.PeriodeService.getPeriodById(this.week).subscribe(
+     this.PeriodeService.getPeriodByIdWeek(this.idDay).subscribe(
       data => {
         this.periods  = data;
         console.log(data)

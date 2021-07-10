@@ -27,7 +27,7 @@ export class PeriodeService {
     return this.http.delete<Period>(this.CONF_URL + id)
   }
 
-  getPeriodById(id: number): Observable<Array<Period>>{
-    return this.http.get<Array<Period>>(this.CONF_URL + id)
+  getPeriodByIdWeek(id: number): Observable<Array<Period>>{
+    return this.http.get<Array<Period>>(environment.api + "/periods/days/" + id)
   }
 }

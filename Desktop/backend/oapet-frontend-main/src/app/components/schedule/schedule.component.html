@@ -1,3 +1,10 @@
-<div class="week">
-  <app-day [date] = days?.date [begin_at] = days?.begin_at [end_at] = days?.end_at [week] = 1></app-day>
-</div>
+<html>
+  <head>
+    <title>Affichage de l'emploi de temps</title>
+  </head>
+  <body>
+    <div class="week">
+  <app-day *ngFor="let day of  days" [idDay]= day.id [date] = day.date [begin_at] = day.begin_at [end_at] = day.end_at [week] = day.week>{{day.date}}></app-day>
+    </div>
+  </body>
+</html>

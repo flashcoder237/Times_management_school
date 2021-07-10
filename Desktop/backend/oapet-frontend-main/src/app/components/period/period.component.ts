@@ -9,6 +9,7 @@ import { Period } from './../../types/period'
 export class PeriodComponent implements OnInit{
 
   @Input() periode: Period = {
+    id : 0,
     hour_begin: 0,
     hour_end: 0,
     is_pause: false,

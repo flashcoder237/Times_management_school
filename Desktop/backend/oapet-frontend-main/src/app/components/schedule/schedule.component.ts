@@ -11,7 +11,7 @@ import { WeekService } from './../../services/week.service'
 export class ScheduleComponent implements OnInit {
 
   id = 1
-  days? : Day
+  days : Array<Day> = []
   week: Week = {
      id: 1,
    first_day : new Date(''),
@@ -29,7 +29,7 @@ export class ScheduleComponent implements OnInit {
       }
     ) */
 
-      this.WeekService.getDaysById(1).subscribe(
+      this.WeekService.getDaysById(this.id).subscribe(
         data => {
           this.days = data;
           console.log(data)

@@ -1,5 +1,5 @@
 export interface Period{
-
+    id: number
     hour_begin: number
     hour_end : number
     is_pause : boolean
