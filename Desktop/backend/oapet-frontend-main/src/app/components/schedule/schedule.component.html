@@ -1,10 +1,8 @@
-<html>
-  <head>
-    <title>Affichage de l'emploi de temps</title>
-  </head>
-  <body>
-    <div class="week">
-  <app-day *ngFor="let day of  days" [idDay]= day.id [date] = day.date [begin_at] = day.begin_at [end_at] = day.end_at [week] = day.week>{{day.date}}></app-day>
+    <div class="week" id="pdfTable">
+    <div>
+      <img src="../../../assets/titre.jpg" style="width: 50%; height: 50px; margin: 10px;">
     </div>
-  </body>
-</html>
+  <br><br>
+  <app-day *ngFor="let day of  days" [idDay]= day.id [date] = day.date [begin_at] = day.begin_at [end_at] = day.end_at [week] = day.week>{{day.date}}</app-day>
+    </div>
+   <button mat-button (click)="downloadAsPDF()">Export To PDF</button>

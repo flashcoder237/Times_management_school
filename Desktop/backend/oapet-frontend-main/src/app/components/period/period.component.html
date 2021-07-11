@@ -3,15 +3,15 @@
         <mat-icon>more_vert</mat-icon>
       </button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item (click)='change()'>
           reserver
         </button>
-         <button mat-menu-item>
+         <button mat-menu-item (click)='change()'>
           annuler
         </button>
-         <button mat-menu-item>
+         <button mat-menu-item (click)='change()'>
          blocker
         </button>
       </mat-menu> </div>
-          <div class="nom">Dr Cedric Tefoye</div>
+          <div class="nom">Dr Cedric Tefoye<div class="{{'etat ' + getStyle()}}"></div></div>
       </div>

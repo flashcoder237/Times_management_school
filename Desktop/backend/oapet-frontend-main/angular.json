@@ -33,7 +33,9 @@
               "src/custom-theme.scss",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "C:/Users/Cedric Tefoye/Desktop/Gestion_Emploi_De_Temps/school projet frontend/school projet frontend/node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -1,4 +1,7 @@
 .modification {
+  position: absolute;
+  right: 2px;
+  top: 2px;
   background-color: white;
   width: 23px;
   height: 23px;
@@ -6,6 +9,7 @@
   box-shadow: none;
 }
 .periode{
+  padding: 13px;
    margin: 10px;
     background-color: white;
     filter: drop-shadow(0px 0px 1px blue);
@@ -17,4 +21,75 @@ mat-icon{
   left: +0%;
  font-size: 13px;
   color: rgb(76, 76, 77);
+}
+
+.etat{
+   width: 7px;
+   height: 7px;
+   border-radius: 100%/100%;
+   position: absolute;
+   bottom: 6px;
+   left: 6px;
+}
+
+.bloquer{
+  background-color: red;
+  animation: animationEtat1 2s infinite ease-in-out;
+}
+
+.occuper{
+  background-color: rgb(31, 1, 1);
+  animation: animationEtat2 2s infinite ease-in-out;
+
+}
+
+.libre{
+  background-color: green;
+  animation: animationEtat3 2s infinite ease-in-out;
+
+}
+
+.attente{
+  background-color: greenyellow;
+  animation: animationEtat4 2s infinite ease-in-out;
+
+}
+
+@keyframes animationEtat1 {
+  0%{
+    background-color: red;
+  }
+  100%{
+    background-color: white;
+  }
+}
+
+@keyframes animationEtat2 {
+  0% {
+    background-color: rgb(31, 1, 1);
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes animationEtat3 {
+  0% {
+    background-color: green;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes animationEtat4 {
+  0% {
+    background-color: greenyellow;
+  }
+
+  100% {
+    background-color: white;
+  }
 }

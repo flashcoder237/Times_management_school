@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Period } from './../../types/period'
 import { DayService } from '../../services/day.service';
 import { PeriodeService } from '../../services/periode.service';
-import * as moment from 'moment';
+import moment from 'moment';
 
 @Component({
   selector: 'app-day',

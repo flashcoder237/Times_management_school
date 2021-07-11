@@ -1,3 +1,4 @@
+import { PeriodeService } from './../../services/periode.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Period } from './../../types/period'
 
@@ -17,8 +18,26 @@ export class PeriodComponent implements OnInit{
     was_occupied: false,
     day: new Date(''),
   }
-  constructor() { }
 
+
+  getStyle(): String{
+    if (this.periode.is_occupied)
+      return 'occuper'
+    if (!this.periode.is_occupied)
+      return 'libre'
+    if (this.periode.was_occupied)
+      return 'attente'
+    return 'bloquer'
+  }
+
+  change() {
+    this.PeriodeService.updatePeriod(this.periode.id, this.periode).subscribe()
+    if (this.periode.is_occupied)
+      this.periode.is_occupied = false
+     this.periode.is_occupied = true
+  }
+
+  constructor(public PeriodeService : PeriodeService){}
   ngOnInit(): void {
   }
 
